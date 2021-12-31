@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Number Theory Calculator</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="style.css">
+        <script src="server.js"></script>
+    </head>
+    <body class="container">
+
+        <!-- +++++++++++++++++      Linear Diophantine Equation Solver       ++++++++++++++++++++++++++++++++++++ -->
+        <div class="backcolor-1 section-padding">
+            <h1>Linear Diophantine Equation Solver</h1>
+            <header class="theorem-font">The given in order of ax + by = c.</header>
+            <form>
+                <div class="spacer-20">
+                    A Value:
+                    <input class="cringe-color" type="text" id="aval" name="avalue" size="10">
+                    B Value:
+                    <input class="cringe-color" type="text" id="bval" name="bvalue" size="10">
+                    C Value:
+                    <input class="cringe-color" type="text" id="cval" name="cvalue" size="10">
+                    <div align="center" class="spacer-20 theorem-font" id="cursed-img"></div>
+                    <div align="center" class="spacer-20">The set of all solutions x and y are denoted by:</div>
+                    <div align="center" class="spacer-20 theorem-font" id="set-of-all-xsoln"></div>
+                    <div align="center" class="spacer-20 theorem-font" id="set-of-all-ysoln"></div>
+                </div>
+                <button onclick="updateDE(aval,bval,cval)" class="spacer-20 buttoncolordes" type="button">Solve!</button>
+            </form>
+        </div>
+
+        <!-- +++++++++++++++++      GCD of Two Numbers      ++++++++++++++++++++++++++++++++++++ -->
+        <div class="backcolor-2 section-padding">
+            <h1>GCD of Two Numbers</h1>
+            <div class="theorem-font">For all integer a, b, q and r, if a = qb + r, then gcd(a,b) = gcd(b,r).</div>
+            <form>
+                <div class="spacer-20">
+                    a value:
+                    <input class="cringe-color" type="text" id="agcd" name="avalgcd" size="10">
+                    b value:
+                    <input class="cringe-color" type="text" id="bgcd" name="bvalgcd" size="10">
+                    <div align="center" class="spacer-20" id="ansgcd"></div>
+                </div>
+                <button onclick="updateFindGCD(agcd,bgcd)" class="spacer-20 buttoncolorgcd" type="button">Solve!</button>
+            </form>
+        </div>
+
+        <!-- +++++++++++++++++      Solving linear congruence       ++++++++++++++++++++++++++++++++++++ -->
+        <div class="backcolor-3 section-padding">
+            <h1>Solving Linear Congruences</h1>
+            <div class="theorem-font">For all intergers a and c, with a non-zero, the linear congruence</div>
+            <div align="center" class="theorem-font spacer-20">ax = c (mod m)</div>
+            <div class="theorem-font spacer-20">has a solution iff d|c, where d = gcd(a,m). Moreover, if x=x0 is one
+                                      particular solution to this congruence, then the set of all solutions
+                                      is given by
+            </div>
+            <div align="center" class="theorem-font spacer-20">
+                {xeZ: x=x0 (mod m/d)},
+            </div>
+            <div class="theorem-font spacer-20">or, equivalent,</div>
+            <div align="center" class="theorem-font spacer-20">
+                {xeZ: x=x0, x0 + m/d, x0 + 2(m/d), ..., x0 + (d-1)(m/d) (mod m)}.
+            </div>
+            <form>
+                <div align="center" class="spacer-20">
+                    <input class="cringe-color" type="text" id="x0cong" name="acongruence" size="5">
+                    x =
+                    <input class="cringe-color" type="text" id="ccong" name="canswercong" size="5">
+                    (mod <input class="cringe-color" type="text" id="modm" name="modulous" size="5">)
+                    <div align="center" class="spacer-20" id="anslc"></div>
+                </div>
+                <button onclick="updateLC(x0cong,ccong,modm)" class="spacer-20 buttoncolorlc" type="button">Solve!</button>
+            </form>
+        </div>
+
+         <!-- +++++++++++++++++      Adding Two Numbers KEKW       ++++++++++++++++++++++++++++++++++++ -->
+        <div class="backcolor-4 section-padding">
+            <h1>Adding Two Integers KEKW</h1>
+            <div class="theorem-font">Adding two integers is so easy jeez.</div>
+            <form>
+                <div align="center" class="spacer-20">
+                    <input class="cringe-color" type="text" id="x1" name="firstnum" size="2">
+                    <div onclick="increaseVol()" class="clickable section-padding">+</div>
+                    <input class="cringe-color" type="text" id="x2" name="secondnum" size="2">
+                    <p class="spacer-20" id="ansa2"></p>
+                </div>
+                <button onclick="updateAnsa2(x1,x2)" class="spacer-20 buttoncolora2" type="button">Solve!</button>
+            </form>
+        </div>
+
+         <!-- +++++++++++++++++      Subtracting Two Numbers WEKK       ++++++++++++++++++++++++++++++++++++ -->
+         <div class="backcolor-5 section-padding">
+            <h1>Subtracting Two Integers WEKK </h1>
+            <div class="theorem-font">Subtracting two integers is so easy jeez.</div>
+            <form>
+                <div align="center" class="spacer-20">
+                    <input class="cringe-color" type="text" id="sx1" name="firstnum" size="2">
+                    <div onclick="lowerVol()" class="clickable section-padding">-</div>
+                    <input class="cringe-color" type="text" id="sx2" name="secondnum" size="2">
+                    <p class="spacer-20" id="anss2"></p>
+                </div>
+                <button onclick="updateAnsS2(sx1,sx2)" class="spacer-20 buttoncolors2" type="button">Solve!</button>
+            </form>
+        </div>
+
+        <!-- +++++++++++++++++++ Cittations for TextBook ++++++++++++++++++++++++++++++++++++++++-->
+        <div class="section-padding">
+            <h1 align="center" class="spacer-20">References</h1>
+            <div class="spacer-20">Falculty of Mathematics, (2021). Language and Proofs in Algebra:
+                                   An Introduction Version 1.1. Waterloo. University of Waterloo.
+            </div>
+            <div onclick="playcringenaynay()" class="clickable spacer-40">Daniel Dai</div>
+        </div>
+    </body>
+</html>
